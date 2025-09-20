@@ -1,0 +1,14 @@
+# Node
+front/node_modules/
+back/node_modules/
+
+# Env files
+back/.env
+
+# Python
+pandemic_ai/__pycache__/
+pandemic_ai/models/
+pandemic_ai/dataset/
+
+# Logs
+*.log
