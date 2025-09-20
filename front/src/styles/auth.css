@@ -1,0 +1,76 @@
+/* Full page background */
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #70e1f5, #ffd194);
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 40px 30px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Form inputs */
+.glass-card input[type="text"],
+.glass-card input[type="email"],
+.glass-card input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: #000;
+  font-size: 14px;
+}
+
+/* Buttons */
+.glass-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.35);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.glass-card button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.checkbox-container input {
+  margin-right: 8px;
+}
+
+/* Toggle login/signup link */
+.toggle-text {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #333;
+}
+.toggle-text span {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}

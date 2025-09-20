@@ -1,0 +1,236 @@
+/* General */
+body, html {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #6a7a8ba8;
+  color:black
+}
+
+
+/* Carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: -105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: 
+    linear-gradient(rgba(30,64,175,0.4), rgba(16,185,129,0.4)),
+    url('https://source.unsplash.com/1600x600/?technology,health');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay; /* blend the gradient with image */
+}
+
+
+/* The carousel image itself */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Blend effect */
+  filter: brightness(0.7); /* darkens slightly for text readability */
+  mix-blend-mode: multiply; /* blends with background if needed */
+}
+
+/* Optional: add overlay for stronger effect */
+.carousel-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(30, 64, 175, 0.4),
+    rgba(16, 185, 129, 0.4)
+  ); /* bluish-green overlay */
+  pointer-events: none;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+}
+
+.carousel-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.carousel-text p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* 3D Glass Button */
+.carousel-text button {
+  background: rgba(255, 255, 255, 0.15);
+  color: #000000;
+  text-shadow: 0 0 8px rgba(0,0,0,0.3); /* subtle glow */
+  border: none;
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 16px;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow:
+    4px 4px 20px rgba(0,0,0,0.25),
+    -4px -4px 20px rgba(255,255,255,0.3),
+    inset 2px 2px 5px rgba(255,255,255,0.2),
+    inset -2px -2px 5px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-text button:hover {
+  transform: translateY(-2px) scale(1.05);
+  text-shadow: 0 0 12px rgba(0,0,0,0.5); /* stronger glow on hover */
+  box-shadow:
+    6px 6px 25px rgba(0,0,0,0.3),
+    -6px -6px 25px rgba(255,255,255,0.35),
+    inset 3px 3px 6px rgba(255,255,255,0.25),
+    inset -3px -3px 6px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Key Features - Tile Glass Effect */
+.key-features {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.key-features h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  ;
+}
+
+.feature-card {
+  flex: 1 1 200px;
+  min-width: 180px;
+  padding: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color:black;
+  border-radius: 15px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.1), -4px -4px 20px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.819);
+}
+
+/* Real-time Data Overview */
+.data-overview {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.data-overview h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.overview-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Chart Card */
+.chart-card {
+  flex: 2;
+  min-width: 350px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.1), -4px -4px 20px rgba(255,255,255,0.3);
+}
+
+.chart-section {
+  height: 280px;
+  margin-bottom: 25px;
+}
+
+.chart-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Info Cards */
+.info-cards {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-cards a {
+  display: block;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color:black;
+  text-decoration: none;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.1), -4px -4px 20px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
+
+.info-cards a:hover {
+  transform: scale(1.03);
+  ext-shadow: 0 0 12px rgba(255, 255, 255, 0.819);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .overview-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-card, .info-cards {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-text h1 {
+    font-size: 32px;
+  }
+  .carousel-text p {
+    font-size: 16px;
+  }
+}

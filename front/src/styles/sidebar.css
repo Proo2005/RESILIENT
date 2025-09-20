@@ -1,0 +1,73 @@
+
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.15); /* glass effect */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 0 20px 20px 0;
+  box-shadow:
+    6px 6px 25px rgba(0,0,0,0.25),
+    -6px -6px 25px rgba(255,255,255,0.3),
+    inset 2px 2px 6px rgba(255,255,255,0.2),
+    inset -2px -2px 6px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  z-index: 1000;
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 40px;
+}
+
+/* Menu Links */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: #1e40af;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+  box-shadow:
+    2px 2px 8px rgba(0,0,0,0.15),
+    -2px -2px 8px rgba(255,255,255,0.25);
+}
+
+/* Hover Effect */
+.sidebar-menu a:hover {
+  transform: translateX(5px);
+  background: rgba(255,255,255,0.2);
+  box-shadow:
+    4px 4px 15px rgba(0,0,0,0.2),
+    -4px -4px 15px rgba(255,255,255,0.3);
+}
+
+/* Active Link */
+.sidebar-menu a.active {
+  color: #10b981;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow:
+    4px 4px 15px rgba(0,0,0,0.2),
+    -4px -4px 15px rgba(255,255,255,0.3);
+}

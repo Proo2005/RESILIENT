@@ -1,0 +1,271 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2); /* transparent glass */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  padding: 12px 24px;
+  border-radius: 32px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 15px auto;
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
+
+  /* Neumorphism / glassmorphism shadows */
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.25),   
+    -8px -8px 20px rgba(255, 255, 255, 0.3), 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.2),   
+    inset -2px -2px 5px rgba(255, 255, 255, 0.4); 
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional hover effect for morphism */
+.navbar:hover {
+  box-shadow:
+    12px 12px 25px rgba(0, 0, 0, 0.3),
+    -12px -12px 25px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: none;
+  background: transparent; 
+}
+
+
+.logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 16px 18px;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Active state */
+.nav-links li.active a {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #0077cc;
+  font-weight: 600;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.25),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.4),
+    6px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Water droplet sliding hover effect */
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 120%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
+  transform: translateY(-50%) scale(0.6);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.nav-links li a:hover::before {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.8;
+}
+
+.nav-links li a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden; 
+  display: inline-block; 
+  transition: all 0.3s ease-in-out;
+}
+
+/* Water droplet sliding hover effect */
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.6s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.nav-links li a:hover::before {
+  width: 300%;  
+  height: 300%;
+  opacity: 0.8;
+}
+
+
+/* Login button */
+.login-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.25);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 16px 20px;
+  border-radius: 32px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.4),
+    4px 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Hover glass morphism + color shift */
+.login-btn:hover {
+  background: rgba(192, 193, 194, 0.6);
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.25),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.4),
+    6px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.08);  
+}
+
+
+/* Droplet effect */
+.login-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -120%;
+  width: 150%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 70%);
+  transform: translateY(-50%) scale(0.6);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.login-btn:hover::before {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.8;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; 
+    right: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 16px;
+    box-shadow:
+      8px 8px 20px rgba(0,0,0,0.25),
+      -8px -8px 20px rgba(255,255,255,0.3);
+    display: none; 
+    z-index: 999;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Show nav links when active */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Optional: Hamburger animation when open */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
